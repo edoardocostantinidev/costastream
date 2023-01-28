@@ -6,6 +6,7 @@ export class RustLambda {
   fn: cdk.aws_lambda.Function;
   constructor(scope: Construct, lambdaName: string) {
     this.fn = new cdk.aws_lambda.Function(scope, `lambda.${lambdaName}`, {
+      functionName: lambdaName,
       code: cdk.aws_lambda.Code.fromAsset(
         `../src/${lambdaName}/target/lambda/${lambdaName}`
       ),

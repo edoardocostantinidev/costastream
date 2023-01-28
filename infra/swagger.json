@@ -1,38 +1,40 @@
 {
-  "openapi" : "3.0.1",
-  "info" : {
-    "title" : "costastream-api",
-    "version" : "2023-01-28T00:35:33Z"
+  "openapi": "3.0.1",
+  "info": {
+    "title": "costastream-api",
+    "version": "2023-01-28T00:35:33Z"
   },
-  "servers" : [ {
-    "url" : "https://kj9g4ard56.execute-api.eu-west-1.amazonaws.com/{basePath}",
-    "variables" : {
-      "basePath" : {
-        "default" : "/prod"
+  "servers": [
+    {
+      "url": "https://kj9g4ard56.execute-api.eu-west-1.amazonaws.com/{basePath}",
+      "variables": {
+        "basePath": {
+          "default": "/prod"
+        }
       }
     }
-  } ],
-  "paths" : {
-    "/messages" : {
-      "post" : {
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "content" : { }
+  ],
+  "paths": {
+    "/events": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {}
           },
-          "502" : {
-            "description" : "502 response",
-            "content" : { }
+          "502": {
+            "description": "502 response",
+            "content": {}
           }
         },
-        "x-amazon-apigateway-integration" : {
-          "uri" : "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:849547347436:function:InfraStack-lambdamessagehandler86692A16-xA1FnfjdxQpP/invocations",
-          "httpMethod" : "POST",
-          "passthroughBehavior" : "when_no_match",
-          "type" : "aws_proxy"
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:849547347436:function:InfraStack-lambdamessagehandler86692A16-xA1FnfjdxQpP/invocations",
+          "httpMethod": "POST",
+          "passthroughBehavior": "when_no_match",
+          "type": "aws_proxy"
         }
       }
     }
   },
-  "components" : { }
+  "components": {}
 }
